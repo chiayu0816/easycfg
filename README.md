@@ -19,10 +19,10 @@ EasyCfg is a Go tool designed to simplify system configuration management. It au
 go get github.com/chiayu0816/easycfg
 
 # Specific version
-go get github.com/chiayu0816/easycfg@v1.0.0
+go get github.com/chiayu0816/easycfg@v1.1.0
 
 # Install CLI tool
-go install github.com/chiayu0816/easycfg/cmd/easycfgcli@latest
+go install github.com/chiayu0816/easycfg/cmd/easycfgcli@v1.1.0
 ```
 
 ## Usage

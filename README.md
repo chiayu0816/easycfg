@@ -20,6 +20,9 @@ go get github.com/chiayu0816/easycfg
 
 # Specific version
 go get github.com/chiayu0816/easycfg@v1.0.0
+
+# Install CLI tool
+go install github.com/chiayu0816/easycfg/cmd/easycfgcli@latest
 ```
 
 ## Usage
@@ -27,17 +30,20 @@ go get github.com/chiayu0816/easycfg@v1.0.0
 ### Generate Configuration Structs
 
 ```bash
-# Basic usage
-go run cmd/easycfg/main.go -yaml path/to/config.yml
+# Using go run (if you've installed the package with go get)
+go run github.com/chiayu0816/easycfg/cmd/easycfg -yaml path/to/config.yml
+
+# Using the installed CLI tool
+easycfgcli -yaml path/to/config.yml
 
 # Specify output directory
-go run cmd/easycfg/main.go -yaml path/to/config.yml -output myconfig
+easycfgcli -yaml path/to/config.yml -output myconfig
 
 # Specify package name
-go run cmd/easycfg/main.go -yaml path/to/config.yml -package myconfig
+easycfgcli -yaml path/to/config.yml -package myconfig
 
 # Monitor configuration file changes
-go run cmd/easycfg/main.go -yaml path/to/config.yml -watch
+easycfgcli -yaml path/to/config.yml -watch
 ```
 
 ### Using Generated Configurations in Your Program
@@ -83,6 +89,33 @@ make run-example
 
 # Run complete example
 make run-complete-example
+```
+
+## Development
+
+If you're working on the EasyCfg codebase, you can use the Makefile to simplify common tasks:
+
+```bash
+# Build the main tool
+make build
+
+# Build the CLI tool
+make build-cli
+
+# Install the CLI tool locally
+make install
+
+# Generate configuration from test_config.yml
+make generate-config
+
+# Generate configuration using the CLI tool
+make generate-config-cli
+
+# Watch for changes in the configuration file
+make watch-config
+
+# Clean generated files
+make clean
 ```
 
 ## Testing

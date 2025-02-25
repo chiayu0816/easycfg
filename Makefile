@@ -1,8 +1,16 @@
-.PHONY: build run-example generate-config clean run-complete-example test test-verbose benchmark
+.PHONY: build build-cli run-example generate-config clean run-complete-example test test-verbose benchmark install
 
 # Build tool
 build:
 	go build -o bin/easycfg cmd/easycfg/main.go
+
+# Build CLI tool
+build-cli:
+	go build -o bin/easycfgcli cmd/easycfgcli/main.go
+
+# Install CLI tool
+install:
+	go install ./cmd/easycfgcli
 
 # Run example
 run-example:
@@ -14,7 +22,11 @@ run-complete-example:
 
 # Generate configuration struct
 generate-config:
-	go run cmd/easycfg/main.go -yaml test_config.yml -output generated1
+	go run cmd/easycfg/main.go -yaml test_config.yml -output generated
+
+# Generate configuration struct using CLI tool
+generate-config-cli:
+	./bin/easycfgcli -yaml test_config.yml -output generated
 
 # Generate configuration struct and watch for changes
 watch-config:
@@ -36,6 +48,7 @@ benchmark:
 clean:
 	rm -rf bin
 	rm -rf generated
+	rm -rf test_output
 
 # Initialize directory structure
 init:
@@ -46,4 +59,5 @@ deps:
 	go mod tidy
 
 # Default target
-all: init deps build generate-config 
+all: init deps build build-cli generate-config 
+

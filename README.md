@@ -15,7 +15,11 @@ EasyCfg is a Go tool designed to simplify system configuration management. It au
 ## Installation
 
 ```bash
+# Latest version
 go get github.com/chiayu0816/easycfg
+
+# Specific version
+go get github.com/chiayu0816/easycfg@v1.0.0
 ```
 
 ## Usage

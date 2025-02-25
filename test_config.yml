@@ -1,0 +1,26 @@
+general:
+  server:
+    port: ":8888"
+  depth_service:
+    exchange_addr:
+      - ":11111"
+    futures_addr:
+      - ":11111"
+  match_service:
+    exchange_addr:
+      - ":9011"
+    futures_addr:
+      - ":9011"
+  settlement_service:
+    exchange_addr:
+      - ":9111"
+    futures_addr:
+      - ":9111"
+  kline_service:
+    exchange_addr:
+      - ":9211"
+    futures_addr:
+      - ":9211"
+logger:
+  path: "../log"
+  level: "debug"

@@ -1,5 +1,7 @@
 # EasyCfg
 
+[![GitHub release](https://img.shields.io/github/v/release/chiayu0816/easycfg)](https://github.com/chiayu0816/easycfg/releases/latest)
+
 EasyCfg is a Go tool designed to simplify system configuration management. It automatically converts YAML configuration files into Go structs and uses Viper to read and monitor configuration changes.
 
 ## Features

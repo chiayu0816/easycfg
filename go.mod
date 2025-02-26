@@ -1,6 +1,6 @@
 module github.com/chiayu0816/easycfg
 
-go 1.23.5
+go 1.21.0
 
 require (
 	github.com/fsnotify/fsnotify v1.7.0
